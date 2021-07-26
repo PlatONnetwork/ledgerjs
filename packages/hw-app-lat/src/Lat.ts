@@ -17,11 +17,11 @@
 // FIXME drop:
 import { splitPath, foreach } from "./utils";
 import { log } from "@ledgerhq/logs";
-import { EthAppPleaseEnableContractData } from "@ledgerhq/errors";
+import { LatAppPleaseEnableContractData } from "@ledgerhq/errors";
 import type Transport from "@ledgerhq/hw-transport";
 import { BigNumber } from "bignumber.js";
 import { ethers } from "ethers";
-import { byContractAddress } from "./erc20";
+import { byContractAddress } from "./prc20";
 import { getInfosForContractMethod } from "./contracts";
 
 export type StarkQuantizationType =
@@ -51,7 +51,7 @@ function maybeHexBuffer(
 
 const remapTransactionRelatedErrors = (e) => {
   if (e && e.statusCode === 0x6a80) {
-    return new EthAppPleaseEnableContractData(
+    return new LatAppPleaseEnableContractData(
       "Please enable Contract data on the Ethereum app Settings"
     );
   }
@@ -66,7 +66,7 @@ const remapTransactionRelatedErrors = (e) => {
  * const eth = new Eth(transport)
  */
 
-export default class Eth {
+export default class Lat {
   transport: Transport;
 
   constructor(transport: Transport, scrambleKey = "w0w") {
@@ -75,7 +75,7 @@ export default class Eth {
       this,
       [
         "getAddress",
-        "provideERC20TokenInformation",
+        "providePRC20TokenInformation",
         "signTransaction",
         "signPersonalMessage",
         "getAppConfiguration",
