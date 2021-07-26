@@ -25,17 +25,17 @@ import { byContractAddress } from "./erc20";
 import { getInfosForContractMethod } from "./contracts";
 
 export type StarkQuantizationType =
-  | "eth"
-  | "erc20"
-  | "erc721"
-  | "erc20mintable"
-  | "erc721mintable";
+  | "lat"
+  | "prc20"
+  | "prc721"
+  | "prc20mintable"
+  | "prc721mintable";
 const starkQuantizationTypeMap = {
-  eth: 1,
-  erc20: 2,
-  erc721: 3,
-  erc20mintable: 4,
-  erc721mintable: 5,
+  lat: 1,
+  prc20: 2,
+  prc721: 3,
+  prc20mintable: 4,
+  prc721mintable: 5,
 };
 
 function hexBuffer(str: string): Buffer {
