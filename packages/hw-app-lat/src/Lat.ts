@@ -154,7 +154,7 @@ export default class Lat {
    * @param {*} info: a blob from "prc20.js" utilities that contains all token information.
    *
    * @example
-   * import { byContractAddress } from "@ledgerhq/hw-app-eth/prc20"
+   * import { byContractAddress } from "@ledgerhq/hw-app-lat/prc20"
    * const zrxInfo = byContractAddress("lax10jc0t4ndqarj4q6ujl3g3ycmufgc77epxg02lt")
    * if (zrxInfo) await appEth.providePRC20TokenInformation(zrxInfo)
    * const signed = await appEth.signTransaction(path, rawTxHex)
@@ -342,8 +342,6 @@ export default class Lat {
       return {
         arbitraryDataEnabled: response[0] & 0x01,
         prc20ProvisioningNecessary: response[0] & 0x02,
-        starkEnabled: response[0] & 0x04,
-        starkv2Supported: response[0] & 0x08,
         version: "" + response[1] + "." + response[2] + "." + response[3],
       };
     });
