@@ -77,6 +77,65 @@ const ethereumUnits = (name, code) => [
   },
 ];
 
+const platonUnits = (name, code) => [
+  {
+    name,
+    code,
+    magnitude: 18,
+  },
+  {
+    name: "Tlat",
+    code: "Tlat",
+    magnitude: 30
+  },
+  {
+    name: "Glat",
+    code: "Glat",
+    magnitude: 27
+  },
+  {
+    name: "Mlat",
+    code: "Mlat",
+    magnitude: 24
+  },
+  {
+    name: "Klat",
+    code: "Klat",
+    magnitude: 21
+  },
+  {
+    name: "Millilat",
+    code: "Millilat",
+    magnitude: 15
+  },
+  {
+    name: "Microlat",
+    code: "Microlat",
+    magnitude: 12,
+  },
+  {
+    name: "Gvon",
+    code: "Gvon",
+    magnitude: 9,
+  },
+  {
+    name: "Mvon",
+    code: "Mvon",
+    magnitude: 6,
+  },
+  {
+    name: "Kvon",
+    code: "Kvon",
+    magnitude: 3,
+  },
+  {
+    name: "von",
+    code: "von",
+    magnitude: 0,
+  },
+]
+
+
 const cryptocurrenciesById: Record<string, CryptoCurrency> = {
   aeternity: {
     type: "CryptoCurrency",
@@ -857,6 +916,30 @@ const cryptocurrenciesById: Record<string, CryptoCurrency> = {
       },
     ],
     explorerViews: [],
+  },
+  platon: {
+    type: "CryptoCurrency",
+    id: "Platon",
+    coinType: 486, // TODO ? coin type according to slip44. THIS IS NOT GUARANTEED UNIQUE across currencies (e.g testnets,..)
+    name: "Platon",
+    managerAppName: "Platon", // 管理器显示的应用名称
+    ticker: "LAT",
+    scheme: "Platon", // the scheme name to use when formatting an URI (without the ':')
+    color: "#FFB6C1",
+    units: platonUnits("platon", "LAT"),
+    family: "platon",
+    blockAvgTime: 2,
+    ethereumLikeInfo: { // TODO  should be defined for ethereum family
+      chainId: 100,
+      networkId: 1,
+    },
+    explorerViews: [
+      {
+        tx: "https://scan.platon.network/trade-detail?txHash=$hash",
+        address: "https://scan.platon.network/address-detail?address=$address",
+        token: "https://scan.platon.network/tokens-detail?type=$token&address=$address",
+      },
+    ],
   },
   ethereum: {
     type: "CryptoCurrency",
@@ -2840,8 +2923,8 @@ export function listCryptoCurrencies(
       ? cryptocurrenciesArray
       : prodCryptoArray
     : withDevCrypto
-    ? cryptocurrenciesArrayWithoutTerminated
-    : prodCryptoArrayWithoutTerminated;
+      ? cryptocurrenciesArrayWithoutTerminated
+      : prodCryptoArrayWithoutTerminated;
 }
 
 /**

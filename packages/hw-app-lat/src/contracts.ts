@@ -18,7 +18,7 @@ export const getInfosForContractMethod = (
         payload: contractSelectors[lcSelector]["serialized_data"],
         signature: contractSelectors[lcSelector]["signature"],
         plugin: contractSelectors[lcSelector]["plugin"],
-        erc20OfInterest: contractSelectors[lcSelector]["erc20OfInterest"],
+        prc20OfInterest: contractSelectors[lcSelector]["erc20OfInterest"],
         abi: contractSelectors["abi"],
       };
     }

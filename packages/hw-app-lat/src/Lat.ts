@@ -80,7 +80,6 @@ export default class Lat {
         "signTransaction",
         "signPersonalMessage",
         "getAppConfiguration",
-        "signEIP712HashedMessage",
         "setExternalPlugin",
       ],
       scrambleKey
@@ -334,8 +333,6 @@ export default class Lat {
   getAppConfiguration(): Promise<{
     arbitraryDataEnabled: number;
     prc20ProvisioningNecessary: number;
-    starkEnabled: number;
-    starkv2Supported: number;
     version: string;
   }> {
     return this.transport.send(0xe0, 0x06, 0x00, 0x00).then((response) => {

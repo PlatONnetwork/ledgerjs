@@ -1,4 +1,4 @@
-import blob from "@ledgerhq/cryptoassets/data/erc20-signatures";
+import blob from "@ledgerhq/cryptoassets/data/prc20-signatures";
 
 /**
  * Retrieve the token information by a given contract address if any
@@ -9,7 +9,7 @@ export const byContractAddress = (
   get().byContract(asContractAddress(contract));
 
 /**
- * list all the ERC20 tokens informations
+ * list all the PRC20 tokens informations
  */
 export const list = (): TokenInfo[] => get().list();
 export type TokenInfo = {
@@ -30,7 +30,7 @@ const asContractAddress = (addr: string) => {
   return a.startsWith("0x") ? a : "0x" + a;
 };
 
-// this internal get() will lazy load and cache the data from the erc20 data blob
+// this internal get() will lazy load and cache the data from the PRC20 data blob
 const get: () => API = (() => {
   let cache;
   return () => {
