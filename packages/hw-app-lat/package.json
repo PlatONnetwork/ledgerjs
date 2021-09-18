@@ -27,7 +27,7 @@
   "types": "lib/Lat.d.ts",
   "license": "Apache-2.0",
   "dependencies": {
-    "@ledgerhq/cryptoassets": "^6.2.0",
+    "@ledgerhq/cryptoassets": "https://github.com/PlatONnetwork/ledgerjs#cryptoassets",
     "@ledgerhq/errors": "^6.2.0",
     "@ledgerhq/hw-transport": "^6.2.0",
     "@ledgerhq/logs": "^6.2.0",
