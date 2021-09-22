@@ -1,6 +1,6 @@
 {
   "name": "@ledgerhq/hw-app-lat",
-  "version": "6.2.0",
+  "version": "6.3.0",
   "description": "Ledger Hardware Wallet Lat Application API",
   "keywords": [
     "Ledger",
@@ -29,7 +29,7 @@
   "dependencies": {
     "@ledgerhq/cryptoassets": "https://github.com/PlatONnetwork/ledgerjs#cryptoassets",
     "@ledgerhq/errors": "^6.2.0",
-    "@ledgerhq/hw-transport": "^6.2.0",
+    "@ledgerhq/hw-transport": "^6.3.0",
     "@ledgerhq/logs": "^6.2.0",
     "bignumber.js": "^9.0.1",
     "ethers": "^5.4.1"
