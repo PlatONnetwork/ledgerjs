@@ -307,7 +307,7 @@ export default class Lat {
 
     return foreach(toSend, (data, i) =>
       this.transport
-        .send(0xe0, 0x04, i === 0 ? 0x00 : 0x80, 0x00, data)
+        .send(0xe0, 0x04, i === 0 ? 0x00 : 0x80, i === toSend.length - 1 ? 0x00 : 0x01, data)
         .then((apduResponse) => {
           response = apduResponse;
         })
